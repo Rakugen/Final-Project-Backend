@@ -5,6 +5,10 @@ Rails.application.routes.draw do
       resources :messages
       resources :users
       resources :joins
+
+      post '/login', to: `auth#login`
+      get "/current_user", to: "auth#get_user_from_token"
+
     end
   end
 end
