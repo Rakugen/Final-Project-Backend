@@ -2,7 +2,7 @@ require 'faker'
 
 def run
   10.times do
-    user = User.find_or_create_by(username:Faker::Name.name, password:"123")
+    # user = User.find_or_create_by(username:Faker::Name.name, password:"123")
     chatroom = Chatroom.find_or_create_by(name:Faker::Games::LeagueOfLegends.champion, description:Faker::Lorem.paragraph)
   end
 

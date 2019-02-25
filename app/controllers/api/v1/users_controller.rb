@@ -38,12 +38,12 @@ class Api::V1::UsersController < ApplicationController
     render json: @user, status: :accepted
   end
 
-  def login
-    @users = User.all
-    @user = @users.find_by(login_params)
-
-    render json: @user, status: :ok
-  end
+  # def login
+  #   @users = User.all
+  #   @user = @users.find_by(login_params)
+  #
+  #   render json: @user, status: :ok
+  # end
 
   private
   def user_params
