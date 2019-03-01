@@ -15,7 +15,7 @@ def run
     user = User.find(join.user_id)
     chatroom = user.chatrooms.sample
     message = Faker::Quote.yoda
-    Message.find_or_create_by(username: user.username, user_id:user.id, chatroom_id:chatroom.id, message:message)
+    Message.find_or_create_by(username: user.username, user_id:user.id, chatroom_id:chatroom.id, message_content:message)
   end
 
   30.times do
@@ -23,7 +23,7 @@ def run
     user = User.find(join.user_id)
     chatroom = user.chatrooms.sample
     message = Faker::Quotes::Shakespeare.hamlet_quote
-    Message.find_or_create_by(username: user.username, user_id:user.id, chatroom_id:chatroom.id, message:message)
+    Message.find_or_create_by(username: user.username, user_id:user.id, chatroom_id:chatroom.id, message_content:message)
   end
 end
 

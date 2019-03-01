@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_142318) do
     t.string "username"
     t.integer "user_id"
     t.integer "chatroom_id"
-    t.string "message"
+    t.string "message_content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

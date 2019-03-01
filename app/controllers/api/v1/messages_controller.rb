@@ -10,9 +10,13 @@ class Api::V1::MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.find_or_create_by(message_params)
-    # @message.save
-    render json: @message, status: :created
+    @message = Message.new(message_params)
+    if @message.save
+      ActionCable.server.broadcast("message_channel", @message)
+      render json: @message, status: :created
+    else
+      render json: {error: 'Could not create message.'}, status: 422
+    end
   end
 
   def update
@@ -28,6 +32,6 @@ class Api::V1::MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:username, :user_id, :chatroom_id, :message)
+    params.require(:message).permit(:username, :user_id, :chatroom_id, :message_content)
   end
 end
