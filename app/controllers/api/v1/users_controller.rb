@@ -45,6 +45,7 @@ class Api::V1::UsersController < ApplicationController
   #   render json: @user, status: :ok
   # end
 
+  #refactor for strong params
   private
   def user_params
     params.require(:user).permit(:username, :password)
