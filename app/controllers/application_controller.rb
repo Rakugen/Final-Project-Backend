@@ -16,6 +16,10 @@ class ApplicationController < ActionController::API
   end
 
   def curr_user
-    User.find_by(id: decode_token)
+    begin
+      User.find_by(id: decode_token)
+    rescue
+      nil
+    end
   end
 end

@@ -32,6 +32,6 @@ class Api::V1::MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:username, :user_id, :chatroom_id, :message_content)
+    params.require(:message).permit(:color, :username, :user_id, :chatroom_id, :message_content)
   end
 end

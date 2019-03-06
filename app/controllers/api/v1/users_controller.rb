@@ -10,17 +10,18 @@ class Api::V1::UsersController < ApplicationController
       if curr_user.id == @user.id
         render json: @user
       else
-        render json: {errors: "WHOA! This ain't your page, bud!"}
+        render json: {errors: "Error. Unable to access this page."}
       end
     else
-      render json: {errors: "User not found!"}
+      render json: {errors: "Error. User not found."}
     end
   end
 
   def create
     @user = User.new(
       username: params[:username],
-      password: params[:password]
+      password: params[:password],
+      color: params[:color]
     )
 
     if @user.save
@@ -38,20 +39,13 @@ class Api::V1::UsersController < ApplicationController
     render json: @user, status: :accepted
   end
 
-  # def login
-  #   @users = User.all
-  #   @user = @users.find_by(login_params)
-  #
-  #   render json: @user, status: :ok
-  # end
-
   #refactor for strong params
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :color)
   end
 
   def login_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :color)
   end
 end
