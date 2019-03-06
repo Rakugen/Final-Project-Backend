@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_142318) do
   create_table "chatrooms", force: :cascade do |t|
     t.string "name"
     t.integer "admin_id", default: 1
-    t.string "description", default: ""
+    t.string "description", default: "No Description."
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_142318) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.string "color"
     t.string "username"
     t.integer "user_id"
     t.integer "chatroom_id"
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_142318) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "color", default: "green"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
