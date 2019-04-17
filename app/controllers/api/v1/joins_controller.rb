@@ -11,7 +11,6 @@ class Api::V1::JoinsController < ApplicationController
 
   def create
     @join = Join.find_or_create_by(join_params)
-    # @join.save
     render json: @join, status: :created
   end
 

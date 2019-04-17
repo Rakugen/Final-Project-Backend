@@ -11,7 +11,6 @@ class Api::V1::ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.find_or_create_by(chatroom_params)
-    # @chatroom.save
     render json: @chatroom, status: :created
   end
 

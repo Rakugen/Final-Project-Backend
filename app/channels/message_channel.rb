@@ -1,14 +1,11 @@
 class MessageChannel < ApplicationCable::Channel
+# Finding unique chatroom and subscribing by its ID
   def subscribed
-    # byebug
-    # stream_from "message_channel_#{params[:id]}"
-    # puts "********************************************************************Subscribing***************************************************"
     stream_for Chatroom.find_by(id: params[:id])
   end
 
+# Unsubscribing from chatroom when necessary by found ID
   def unsubscribed
-    # puts "/////////////////////////////////////////*DISCONNECTINGGGG/////////////////////////////////////////"
-    # Any cleanup needed when channel is unsubscribed
     x = Chatroom.find(params[:id])
     x.unsubscribe()
   end
