@@ -12,6 +12,7 @@ class Api::V1::MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
+      # Sends broadcast over actioncable with the newly created message
       MessageChannel.broadcast_to(@message.chatroom, @message)
       render json: @message, status: :created
     else

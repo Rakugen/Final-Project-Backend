@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Name of App // Logo // Tagline
+Quack - Messaging App back end API
 
-Things you may want to cover:
+## Introduction - What does it do?
 
-* Ruby version
+## Installation - how to setup and install
 
-* System dependencies
+## Usage - what it is used for // explanation
 
-* Configuration
+## Contributing
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License

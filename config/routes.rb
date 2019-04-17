@@ -6,8 +6,10 @@ Rails.application.routes.draw do
       resources :users
       resources :joins
 
+      # Authentication route and token route
       post "/login", to: "auth#login"
       get "/current_user", to: "auth#get_user_from_token"
+      # Chatroom actioncable
       mount ActionCable.server => '/cable'
     end
   end
