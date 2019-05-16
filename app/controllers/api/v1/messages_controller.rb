@@ -1,4 +1,7 @@
 class Api::V1::MessagesController < ApplicationController
+  # MessageController contains full crud for messages and includes
+  # private params for extra security. Action cable is used within the created
+  # method and is accompanied by its own error check.
   def index
     @messages = Message.all
     render json: @messages
@@ -31,7 +34,7 @@ class Api::V1::MessagesController < ApplicationController
     @message.destroy
   end
 
-  private
+  private # private params ensure that only these specific variables can be passed in and changed
   def message_params
     params.require(:message).permit(:color, :username, :user_id, :chatroom_id, :message_content)
   end

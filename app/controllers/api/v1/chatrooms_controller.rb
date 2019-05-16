@@ -25,7 +25,7 @@ class Api::V1::ChatroomsController < ApplicationController
     @chatroom.destroy
   end
 
-  private
+  private # private params ensure that only these specific variables can be passed in and changed
   def chatroom_params
     params.require(:chatroom).permit(:name, :admin_id, :description)
   end

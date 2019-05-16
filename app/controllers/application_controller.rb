@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::API
 # Standard encoding/decoding jwt tokens using secret key "super_secret_key"
-# to be inherited by all lower controllers
+# to be inherited by all lower controllers. secret key is to be kept hidden in
+# a future update for extra security.
 
   def encode_token(user_id)
     JWT.encode({user_id: user_id}, "super_secret_key")

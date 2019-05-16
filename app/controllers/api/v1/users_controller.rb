@@ -25,8 +25,10 @@ class Api::V1::UsersController < ApplicationController
     )
 
     if @user.save
-      token = encode_token(@user.id)    # Creating a JWT token for newly created user
-      render json: {user: UserSerializer.new(@user), token: token}    # Using serializer to make sure @user is read correctly
+      # Creating a JWT token for newly created user
+      token = encode_token(@user.id)
+      # Using serializer to make sure @user is read correctly
+      render json: {user: UserSerializer.new(@user), token: token}
     else
       render json: {errors: @user.errors.full_messages}
     end
@@ -39,7 +41,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
 
-  private
+  private # private params ensure that only these specific variables can be passed in and changed
   def user_params
     params.require(:user).permit(:username, :password, :color)
   end
