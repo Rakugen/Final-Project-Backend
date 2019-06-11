@@ -1,43 +1,35 @@
-# README
-
-A description
-Screenshots and/or demo
-Technologies/Frameworks used
-How to clone and build
-Link to the deployed version
-
 ## Quack - Messaging App using chatrooms for users to connect and communicate
-Quack is a simple website that gives users fun and easy solution to group communication.
+Quack is an interactive website that gives users a fun and easy solution to group communication. Users can send and received messages in real time with auto-updating individualized chatrooms. Past messages are stored server side on the backend API so that you will never have to worry about forgetting a conversation. With included timestamps and metadata, simply login and return to your chatroom to see what everyone was chatting about while you were gone.
 
 ## Contents
-- [Introduction](#introduction)
 - [Setup](#setup)
 - [Features](#features)
-  - [Homepage](#homepage)
   - [Users](#user)
   - [Action Cable](#action-cable)
+  - [Models](#models)
 - [Work In Progress](#work-in-progress)
 - [Contact](#contact)
 
 
+## Setup
+(how to clone and build, bundle install, rails s, etc)
 
-## Introduction - What does it do?
-By incorporating action cables into the backend server, users can instantly send and receive messages.
-
-## Setup - how to setup and install
-
-
-## Features - what it is used for // explanation
-Quack uses action cables for the instant web socket communication between front end and back end servers.
-JWT Auth is used for proper and secure user authentication that keeps sensitive user information private.
-Relationship table consists of Messages, Chatrooms, and Users, where users are connected to chatrooms via a "Join" model
-
-### Homepage
+## Features
+These are some of the key features in Quack:
 
 ### Users
+JWT Auth is used for proper and secure user authentication that keeps sensitive user information private.
 
 ### Action Cable
+Quack uses action cables for the instant web socket communication between front end and back end servers.
 
-## Work In progress
+### Models
+Relationship table consists of Messages, Chatrooms, and Users, where users are connected to chatrooms via a "Join" model.
+
+## Work In Progress
+There are a couple of features that will need to be tuned/finished as well as additional functionality that needs to be implemented in the future. The user model needs to be expanded upon with the ability to select an icon as well as change your font type. With these additions, there will need to be changes to editing a user as well. Action cable will also need to be expanded upon to allow audio chatrooms to be setup and the relationship model needs to be configured to account for sending/receiving invitations to a chatroom.
 
 ## Contact
+  - Email: simonlee0306@gmail.com
+  - LinkedIn: https://www.linkedin.com/in/simonlee0306
+  - Website: https://rakugen.github.io/
