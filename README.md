@@ -1,10 +1,10 @@
-## Quack - Messaging App using chatrooms for users to connect and communicate
+## Quack - Backend API
 Quack is an interactive website that gives users a fun and easy solution to group communication. Users can send and received messages in real time with auto-updating individualized chatrooms. Past messages are stored server side on the backend API so that you will never have to worry about forgetting a conversation. With included timestamps and metadata, simply login and return to your chatroom to see what everyone was chatting about while you were gone.
 
 ## Contents
 - [Setup](#setup)
 - [Features](#features)
-  - [Users](#user)
+  - [Users](#users)
   - [Action Cable](#action-cable)
   - [Models](#models)
 - [Work In Progress](#work-in-progress)
@@ -15,7 +15,7 @@ Quack is an interactive website that gives users a fun and easy solution to grou
 (how to clone and build, bundle install, rails s, etc)
 
 ## Features
-These are some of the key features in Quack:
+These are some of the key features in Quack - Backend API:
 
 ### Users
 JWT Auth is used for proper and secure user authentication that keeps sensitive user information private.
